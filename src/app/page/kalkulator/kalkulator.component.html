@@ -1,0 +1,8 @@
+<div class="container-kalkulator">
+    <input type="text" pInputText style=" width: 100%;" [(ngModel)]="kalkulator.nilai_satu">
+    <input type="text" pInputText style=" width: 100%;" [(ngModel)]="kalkulator.nilai_dua">
+    <p-selectButton [options]="stateOptions" [(ngModel)]="kalkulator.mode" optionLabel="label" optionValue="value">
+    </p-selectButton>
+    <hr>
+    <p-button label="Hitung"></p-button>
+</div>
