@@ -18,7 +18,9 @@ import { InputTextModule } from 'primeng/inputtext';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FeedbackComponent } from './page/feedback/feedback.component';
-
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
+import { InputNumberModule } from 'primeng/inputnumber';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,10 @@ import { FeedbackComponent } from './page/feedback/feedback.component';
     InputTextModule,
     SelectButtonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MessagesModule,
+    MessageModule,
+    InputNumberModule
   ],
   providers: [],
   bootstrap: [AppComponent]

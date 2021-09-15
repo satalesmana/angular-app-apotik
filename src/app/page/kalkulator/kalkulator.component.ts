@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-kalkulator',
   templateUrl: './kalkulator.component.html',
+  providers: [MessageService],
   styleUrls: ['./kalkulator.component.css']
 })
 export class KalkulatorComponent implements OnInit {
@@ -16,7 +18,7 @@ export class KalkulatorComponent implements OnInit {
   hasilHitung = 0
 
 
-  constructor() {
+  constructor(private messageService: MessageService) {
     this.stateOptions = [
       { label: 'Tambah', value: 'tambah' },
       { label: 'Kurang', value: 'kurang' }
@@ -35,6 +37,12 @@ export class KalkulatorComponent implements OnInit {
     if (this.kalkulator.mode === 'kurang') {
       this.hasilHitung = Number(this.kalkulator.nilai_satu) - Number(this.kalkulator.nilai_dua);
     }
+    this.messageService.add({
+      severity: 'info',
+      summary: 'Success',
+      detail: 'Data berhasil di ' + this.kalkulator.mode
+    });
+
     console.log(this.kalkulator)
   }
 

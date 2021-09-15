@@ -1,11 +1,28 @@
+<p-toast></p-toast>
+
 <div class="container-kalkulator">
-    <input type="text" pInputText style=" width: 100%;" [(ngModel)]="kalkulator.nilai_satu">
-    <input type="text" pInputText style=" width: 100%;" [(ngModel)]="kalkulator.nilai_dua">
-    <p-selectButton [options]="stateOptions" [(ngModel)]="kalkulator.mode" optionLabel="label" optionValue="value">
+    <h1>{{ hasilHitung }}</h1>
+
+    <div class="p-grid p-fluid mb-2">
+        <div class="p-field p-col-12 p-md-3 mb-2">
+            <label for="integeronly" class="mb-5 mb-2">Nilai Pertama</label>
+            <p-inputNumber inputId="integeronly" [(ngModel)]="kalkulator.nilai_satu">
+            </p-inputNumber>
+        </div>
+
+        <div class="p-field p-col-12 p-md-3 mb-2">
+            <label for="integeronly" class="mb-2 ">Nilai Kedua</label>
+            <p-inputNumber inputId="integeronly" [(ngModel)]="kalkulator.nilai_dua">
+            </p-inputNumber>
+        </div>
+    </div>
+
+    <p-selectButton class="mb-2" [options]="stateOptions" [(ngModel)]="kalkulator.mode" optionLabel="label"
+        optionValue="value">
     </p-selectButton>
     <hr>
     <p-button label="Hitung" (click)="hitung()"></p-button>
 
     <br>
-    <p>{{ hasilHitung }}</p>
+    <p></p>
 </div>
