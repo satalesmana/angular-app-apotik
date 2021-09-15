@@ -4,5 +4,8 @@
     <p-selectButton [options]="stateOptions" [(ngModel)]="kalkulator.mode" optionLabel="label" optionValue="value">
     </p-selectButton>
     <hr>
-    <p-button label="Hitung"></p-button>
+    <p-button label="Hitung" (click)="hitung()"></p-button>
+
+    <br>
+    <p>{{ hasilHitung }}</p>
 </div>

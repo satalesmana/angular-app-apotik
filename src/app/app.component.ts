@@ -12,6 +12,7 @@ export class AppComponent {
   displayFinder: boolean;
   title: string;
   userComponent: boolean;
+  feedbackDialog: boolean;
 
   dialog = {
     showDialog: false,
@@ -27,6 +28,7 @@ export class AppComponent {
     this.dockItems = [];
     this.displayFinder = false;
     this.userComponent = false;
+    this.feedbackDialog = false;
     this.title = 'ini title';
 
   }
@@ -85,6 +87,13 @@ export class AppComponent {
               this.dialog.showDialog = true;
               this.dialog.component = 'about';
               this.dialog.height = '30rem'
+            }
+          },
+          {
+            label: 'Feedback',
+            icon: 'pi pi-fw pi-info-circle',
+            command: () => {
+              this.feedbackDialog = true;
             }
           },
           {

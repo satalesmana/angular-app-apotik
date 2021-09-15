@@ -36,5 +36,11 @@
       [style]="{width: '30vw', height: '18rem'}" [draggable]="true" [resizable]="false">
       ini dialog untuk user component
     </p-dialog>
+
+    <p-dialog [(visible)]="feedbackDialog" [maximizable]="true" [breakpoints]="{'960px': '50vw'}"
+      [style]="{width: '50vw', height: '18rem'}" [draggable]="true" [resizable]="false">
+      <app-feedback></app-feedback>
+    </p-dialog>
+
   </div>
 </div>

@@ -16,7 +16,8 @@ import { KalkulatorComponent } from './page/kalkulator/kalkulator.component';
 import { AboutComponent } from './page/about/about.component'
 import { InputTextModule } from 'primeng/inputtext';
 import { SelectButtonModule } from 'primeng/selectbutton';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FeedbackComponent } from './page/feedback/feedback.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     LicenseComponent,
     KalkulatorComponent,
-    AboutComponent
+    AboutComponent,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import { FormsModule } from '@angular/forms';
     ButtonModule,
     InputTextModule,
     SelectButtonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

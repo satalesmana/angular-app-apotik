@@ -1,0 +1,17 @@
+<div class="p-fluid p-grid">
+    <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="p-field p-col-12 p-md-4">
+            <span class="p-float-label">
+                <input type="text" id="inputtext_name" pInputText formControlName="name">
+                <label for="inputtext_name">Input name</label>
+            </span>
+        </div>
+        <div class="p-field p-col-12 p-md-4">
+            <span class="p-float-label">
+                <input type="text" id="inputtext_name" pInputText formControlName="message">
+                <label for="inputtext_name">Input message</label>
+            </span>
+        </div>
+        <button type="submit">Send</button>
+    </form>
+</div>
