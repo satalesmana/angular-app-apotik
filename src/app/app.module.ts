@@ -23,6 +23,8 @@ import { MessageModule } from 'primeng/message';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { PanelModule } from "primeng/panel";
 import { RippleModule } from "primeng/ripple";
+import { TessatuComponent } from './latihan/tessatu/tessatu.component';
+import { TesduaComponent } from './latihan/tesdua/tesdua.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { RippleModule } from "primeng/ripple";
     LicenseComponent,
     KalkulatorComponent,
     AboutComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    TessatuComponent,
+    TesduaComponent
   ],
   imports: [
     BrowserModule,
