@@ -21,6 +21,8 @@ import { FeedbackComponent } from './page/feedback/feedback.component';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { PanelModule } from "primeng/panel";
+import { RippleModule } from "primeng/ripple";
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { InputNumberModule } from 'primeng/inputnumber';
     ReactiveFormsModule,
     MessagesModule,
     MessageModule,
-    InputNumberModule
+    InputNumberModule,
+    PanelModule,
+    RippleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

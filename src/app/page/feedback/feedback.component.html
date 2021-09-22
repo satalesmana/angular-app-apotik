@@ -1,17 +1,33 @@
-<div class="p-fluid p-grid">
+<div class="card p-4">
     <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" novalidate>
-        <div class="p-field p-col-12 p-md-4">
-            <span class="p-float-label">
-                <input type="text" id="inputtext_name" pInputText formControlName="name">
-                <label for="inputtext_name">Input name</label>
-            </span>
+        <div class="field grid">
+            <label class="col-12 mb-2 md:col-2 md:mb-0">Name</label>
+            <div class="col-12 md:col-10">
+                <input type="text" id="inputtext_name" class="inputfield w-full" pInputText formControlName="name">
+            </div>
         </div>
-        <div class="p-field p-col-12 p-md-4">
-            <span class="p-float-label">
-                <input type="text" id="inputtext_name" pInputText formControlName="message">
-                <label for="inputtext_name">Input message</label>
-            </span>
+
+        <div class="field grid">
+            <label class="col-12 mb-2 md:col-2 md:mb-0">Email</label>
+            <div class="col-12 md:col-10">
+                <input type="text" id="inputtext_name" class="inputfield w-full" pInputText formControlName="email">
+            </div>
         </div>
-        <button type="submit">Send</button>
+
+        <div class="field grid">
+            <label class="col-12 mb-2 md:col-2 md:mb-0">Messages</label>
+            <div class="col-12 md:col-10">
+                <textarea class="inputfield w-full" rows="5" cols="30" pInputTextarea
+                    formControlName="messages"></textarea>
+            </div>
+        </div>
+
+        <div class="field grid">
+            <label class="col-12 mb-2 md:col-2 md:mb-0">&nbsp;</label>
+            <div class="col-12 md:col-10">
+                <button pButton type="submit" label="Send Messages"></button>
+            </div>
+        </div>
+
     </form>
 </div>
