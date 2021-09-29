@@ -12,6 +12,7 @@ export class AppComponent {
   displayFinder: boolean;
   title: string;
   userComponent: boolean;
+  userListComponent:boolean;
   feedbackDialog: boolean;
 
   dialog = {
@@ -29,6 +30,7 @@ export class AppComponent {
     this.displayFinder = false;
     this.userComponent = false;
     this.feedbackDialog = false;
+    this.userListComponent= false;
     this.title = 'ini title';
 
   }
@@ -36,6 +38,10 @@ export class AppComponent {
   ngOnInit() {
     this.onSetMenubar()
     this.onSetDocItem()
+  }
+
+  onCloseUsers(){
+    this.userComponent = false
   }
 
   cekIsHome() {
@@ -62,6 +68,13 @@ export class AppComponent {
               this.userComponent = true;
             }
           },
+          {
+            label: 'List Data',
+            icon: 'pi pi-fw pi-user-plus',
+            command: () =>{
+              this.userListComponent = true;
+            }
+          }
         ]
       },
       {

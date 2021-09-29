@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,8 @@ import { PanelModule } from "primeng/panel";
 import { RippleModule } from "primeng/ripple";
 import { TessatuComponent } from './latihan/tessatu/tessatu.component';
 import { TesduaComponent } from './latihan/tesdua/tesdua.component';
+import { FormComponent } from './page/user/form/form.component';
+import { ListComponent } from './page/user/list/list.component';
 
 @NgModule({
   declarations: [
@@ -34,9 +37,12 @@ import { TesduaComponent } from './latihan/tesdua/tesdua.component';
     AboutComponent,
     FeedbackComponent,
     TessatuComponent,
-    TesduaComponent
+    TesduaComponent,
+    FormComponent,
+    ListComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     MenubarModule,

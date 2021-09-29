@@ -1,0 +1,38 @@
+<p-dialog 
+    [(visible)]="sowForm" 
+    (onHide) = "hideForm()"
+    [maximizable]="true" 
+    [breakpoints]="{'960px': '50vw'}"
+    [style]="{width: '45vw', height: '20rem'}" 
+    [draggable]="true" 
+    [resizable]="false">
+    <div class="card p-4">
+    <form [formGroup]="userForm"  novalidate>
+      <div class="field grid">
+          <label class="col-12 mb-2 md:col-2 md:mb-0">Name</label>
+          <div class="col-12 md:col-10">
+              <input type="text"class="inputfield w-full" pInputText formControlName="name">
+          </div>
+      </div>
+
+      <div class="field grid">
+        <label class="col-12 mb-2 md:col-2 md:mb-0">Email</label>
+        <div class="col-12 md:col-10">
+            <input type="text"class="inputfield w-full" pInputText formControlName="email">
+        </div>
+      </div>
+
+      <div class="field grid">
+        <label class="col-12 mb-2 md:col-2 md:mb-0">Password</label>
+        <div class="col-12 md:col-10">
+            <input type="text"class="inputfield w-full" pInputText formControlName="password">
+        </div>
+      </div>
+
+    </form>
+  </div>
+  <ng-template pTemplate="footer">
+    <p-button (click)="onCancel()" label="Cancel" styleClass="p-button-text"></p-button>
+    <p-button (click)="onSubmit()" label="Submit" styleClass="p-button-text"></p-button>
+  </ng-template>
+</p-dialog>

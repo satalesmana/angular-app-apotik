@@ -15,7 +15,8 @@ export class FeedbackComponent implements OnInit {
   createFormGroup() {
     return new FormGroup({
       name: new FormControl(),
-      message: new FormControl(),
+      email: new FormControl(),
+      messages: new FormControl(),
     })
   }
 
