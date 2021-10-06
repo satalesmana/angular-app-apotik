@@ -26,4 +26,16 @@ export class UsersService {
 	       
 	  });
   }
+
+  public get():Observable<any> {
+	  return new Observable<any>(observer => {
+	    this.http.get(this.baseUrl+'/api/users')
+        .subscribe((respond:any) => {
+          observer.next(respond);
+          observer.complete();
+          return {unsubcribe() {respond}};
+	    });
+	       
+	  });
+  }
 }

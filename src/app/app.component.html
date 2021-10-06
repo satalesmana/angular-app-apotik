@@ -37,6 +37,11 @@
       (closeForm)="onCloseUsers()">
     </app-form-users>
 
+    <app-list-users 
+    [sowTable]="isShowUserlist" 
+    (closeTable)="onCloseUsersList()">
+  </app-list-users>
+
     <p-dialog [(visible)]="feedbackDialog" [maximizable]="true" [breakpoints]="{'960px': '50vw'}"
       [style]="{width: '30vw', height: '23rem'}" [draggable]="true" [resizable]="false">
       <app-feedback></app-feedback>
