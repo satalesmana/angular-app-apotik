@@ -28,6 +28,7 @@ import { TessatuComponent } from './latihan/tessatu/tessatu.component';
 import { TesduaComponent } from './latihan/tesdua/tesdua.component';
 import { FormComponent } from './page/user/form/form.component';
 import { ListComponent } from './page/user/list/list.component';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { ListComponent } from './page/user/list/list.component';
     MessageModule,
     InputNumberModule,
     PanelModule,
-    RippleModule
+    RippleModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

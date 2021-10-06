@@ -14,6 +14,7 @@ export class AppComponent {
   userComponent: boolean;
   userListComponent:boolean;
   feedbackDialog: boolean;
+  isShowUserlist: boolean;
 
   dialog = {
     showDialog: false,
@@ -32,12 +33,17 @@ export class AppComponent {
     this.feedbackDialog = false;
     this.userListComponent= false;
     this.title = 'ini title';
+    this.isShowUserlist = false;
 
   }
 
   ngOnInit() {
     this.onSetMenubar()
     this.onSetDocItem()
+  }
+
+  onCloseUsersList(){
+    this.isShowUserlist = false;
   }
 
   onCloseUsers(){
@@ -72,7 +78,7 @@ export class AppComponent {
             label: 'List Data',
             icon: 'pi pi-fw pi-user-plus',
             command: () =>{
-              this.userListComponent = true;
+              this.isShowUserlist = true;
             }
           }
         ]
