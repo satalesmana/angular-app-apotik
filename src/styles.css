@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background: url('assets/window.jpg') no-repeat center center fixed;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}

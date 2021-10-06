@@ -1,18 +1,16 @@
 body{
     padding: 0px;
+    height: 100%;
 }
 html {
     height: 100%;
 }
+
 :host ::ng-deep {
     .dock-demo {
         .dock-window {
             width: 100%;
-            height: 750px;
-            position: relative;
-            background-image: url('../assets/window.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
+            height: 100%;
         }
 
         .p-dock {
