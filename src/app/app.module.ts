@@ -29,6 +29,7 @@ import { TesduaComponent } from './latihan/tesdua/tesdua.component';
 import { FormComponent } from './page/user/form/form.component';
 import { ListComponent } from './page/user/list/list.component';
 import {TableModule} from 'primeng/table';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import {TableModule} from 'primeng/table';
     InputNumberModule,
     PanelModule,
     RippleModule,
-    TableModule
+    TableModule,
+    ConfirmDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

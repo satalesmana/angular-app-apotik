@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, EventEmitter, Output} from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output, OnChanges} from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { UsersService } from '../../../service/users/users.service'
 @Component({
@@ -8,14 +8,20 @@ import { UsersService } from '../../../service/users/users.service'
 })
 export class FormComponent implements OnInit {
   @Input() sowForm:boolean;
+  @Input() user:any;
   @Output() closeForm = new EventEmitter<string>();
-
+  
   userForm: FormGroup
   constructor(
     private service:UsersService
   ) { 
     this.sowForm = false;
     this.userForm = this.userFormGroup()
+    this.user = {
+      name:'',
+      email:'',
+      password:''
+    }
   }
 
   userFormGroup() {
@@ -26,6 +32,13 @@ export class FormComponent implements OnInit {
     })
   }
 
+  ngOnChanges(){
+    this.userForm.setValue({
+      name:this.user.name,
+      email: this.user.email,
+      password:''
+    })
+  }
 
   ngOnInit(): void {
   }
@@ -43,6 +56,14 @@ export class FormComponent implements OnInit {
     this.service.add(this.userForm.value).subscribe((output:any) => {
       alert(output.name)
       this.userForm.reset();
+    });
+  }
+
+  onUpdate(){
+    this.service.update(this.user._id, this.userForm.value).subscribe((output:any) => {
+      alert(output.name)
+      this.userForm.reset();
+      this.closeForm.next();
     });
   }
 }
