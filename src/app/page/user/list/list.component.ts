@@ -70,9 +70,7 @@ export class ListComponent implements OnInit {
       icon: 'pi pi-info-circle',
       accept:async () => {
           try{
-            const res = await this.service.delete(id).toPromise()
-         
-            this.onLoadUserDataTable();
+            const res = await this.service.delete(id).toPromise()  
 
             this.msgService.add({
               severity: 'info',
@@ -80,6 +78,7 @@ export class ListComponent implements OnInit {
               detail: 'Data berhasil dihapus'
             });
 
+            //this.onLoadUserDataTable();
           }catch (error){
             this.msgService.add({
               severity: 'warning',

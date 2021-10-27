@@ -7,8 +7,8 @@ import {observable, Observable} from "rxjs";
   providedIn: 'root'
 })
 export class UsersService {
-  //public baseUrl = 'https://app-apotik-server.herokuapp.com'
-  public baseUrl = 'http://localhost:3000'
+  public baseUrl = 'https://app-apotik-server.herokuapp.com'
+  //public baseUrl = 'http://localhost:3000'
   constructor(private http:HttpClient) { }
 
   public add(data:any):Observable<any> {
@@ -31,11 +31,18 @@ export class UsersService {
   public get():Observable<any> {
 	  return new Observable<any>(observer => {
 	    this.http.get(this.baseUrl+'/api/users')
-        .subscribe((respond:any) => {
-          observer.next(respond);
-          observer.complete();
-          return {unsubcribe() {respond}};
-	    });
+        .subscribe(
+          (respond:any) => {
+            observer.next(respond);
+            observer.complete();
+            return {unsubcribe() {respond}};
+          },
+          (err:any)  => {
+            observer.next(err);
+            observer.complete();
+            return {unsubcribe() {err}};
+          }
+      );
 	       
 	  });
   }
@@ -48,6 +55,11 @@ export class UsersService {
         observer.next(res);
         observer.complete();
         return {unsubcribe() {res}};
+      },
+      (err:any)  => {
+        observer.next(err);
+        observer.complete();
+        return {unsubcribe() {err}};
       })
     })
   }
