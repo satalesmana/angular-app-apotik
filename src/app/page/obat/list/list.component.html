@@ -1,0 +1,51 @@
+<p-dialog [(visible)]="sowTable" (onHide)="hideTable()" [maximizable]="true" [breakpoints]="{'960px': '50vw'}"
+    [style]="{width: '65vw', height: '40rem'}" [draggable]="true" [resizable]="true" header=" List Of Obat ">
+    <p-table [loading]="loading" [value]="dataObat" [paginator]="true" [rows]="10" [totalRecords]="10"
+        responsiveLayout="scroll">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>No</th>
+                <th pSortableColumn="nama_obat">Name Obat <p-sortIcon field="nama_obat"></p-sortIcon>
+                </th>
+                <th pSortableColumn="harga_jual">Harga Jual <p-sortIcon field="harga_jual"></p-sortIcon>
+                </th>
+                <th pSortableColumn="harga_beli">Harga Beli <p-sortIcon field="harga_beli"></p-sortIcon>
+                </th>
+                <th pSortableColumn="qty">Qty <p-sortIcon field="qty"></p-sortIcon>
+                </th>
+                <th>
+                    <p-button label="Reload" (click)="onLoadDataObat()"></p-button>
+                </th>
+            </tr>
+            <tr>
+                <th> &nbsp; </th>
+                <th>
+                    <p-columnFilter type="text" field="nama_obat"></p-columnFilter>
+                </th>
+                <th>
+                    <p-columnFilter type="text" field="harga_jual"></p-columnFilter>
+                </th>
+                <th> &nbsp; </th>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-index="rowIndex" let-dataObat>
+            <tr>
+                <td> {{ index+1 }} </td>
+                <td>{{dataObat.nama_obat}}</td>
+                <td>{{dataObat.harga_jual}}</td>
+                <td>{{dataObat.harga_beli}}</td>
+                <td>{{dataObat.qty}}</td>
+                <td>
+                    <button icon="pi pi-check" (click)="onEdit(dataObat._id)" pButton pRipple type="button" label="Edit"
+                        class="p-button-primary p-button-text"></button>
+                    <button icon="pi pi-times" (click)="onDelete(dataObat._id)" pButton pRipple type="button"
+                        label="Delete" class="p-button-danger p-button-text"></button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+
+</p-dialog>
+
+<p-toast></p-toast>

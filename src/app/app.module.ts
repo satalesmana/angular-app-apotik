@@ -28,9 +28,11 @@ import { TessatuComponent } from './latihan/tessatu/tessatu.component';
 import { TesduaComponent } from './latihan/tesdua/tesdua.component';
 import { FormComponent } from './page/user/form/form.component';
 import { ListComponent } from './page/user/list/list.component';
-import {TableModule} from 'primeng/table';
-import {ConfirmDialogModule} from 'primeng/confirmdialog';
-import {ProgressSpinnerModule} from 'primeng/progressspinner';
+import { TableModule } from 'primeng/table';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { ListObatComponent } from './page/obat/list/list.component';
+import { FormObatComponent } from './page/obat/form/form.component'
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import {ProgressSpinnerModule} from 'primeng/progressspinner';
     TessatuComponent,
     TesduaComponent,
     FormComponent,
-    ListComponent
+    ListComponent,
+    ListObatComponent,
+    FormObatComponent
   ],
   imports: [
     HttpClientModule,
