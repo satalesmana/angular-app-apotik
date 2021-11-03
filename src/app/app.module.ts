@@ -30,6 +30,7 @@ import { FormComponent } from './page/user/form/form.component';
 import { ListComponent } from './page/user/list/list.component';
 import {TableModule} from 'primeng/table';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
     PanelModule,
     RippleModule,
     TableModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    ProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

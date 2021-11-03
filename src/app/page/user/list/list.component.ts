@@ -1,6 +1,7 @@
-import { Component, Input, OnInit, EventEmitter, Output} from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output, ChangeDetectorRef} from '@angular/core';
 import { UsersService } from '../../../service/users/users.service'
 import {ConfirmationService, MessageService, PrimeNGConfig} from 'primeng/api';
+import { LazyLoadEvent } from 'primeng/api';
 
 @Component({
   selector: 'app-list-users',
@@ -14,38 +15,57 @@ export class ListComponent implements OnInit {
   
   usersdata:any;
   isShowForm:boolean;
+  loading:boolean;
   user:any;
+  totalRow:number;
 
   constructor(
     private confirmationService: ConfirmationService,
     private service:UsersService,
     private primengConfig: PrimeNGConfig,
-    private msgService:MessageService
+    private msgService:MessageService,
+    private cdref: ChangeDetectorRef
   ) {
     this.sowTable = false;
     this.usersdata = [];
     this.isShowForm = false;
+    this.loading = false;
     this.user={
       id:'',
       name:'',
       email:'',
       password:''
     }
+    this.totalRow= 0;
+  }
+
+  ngAfterContentChecked() {
+    this.cdref.detectChanges();
   }
    
   ngOnInit(): void {
     this.primengConfig.ripple = true;
 
-    this.onLoadUserDataTable()
+    //this.onLoadUserDataTable()
   }
 
-  async onLoadUserDataTable(){
-    try{
-      const res = await this.service.get().toPromise()
+  onLoadUserDataTable(event: LazyLoadEvent){
+    this.loading = true;
+    this.service.get(event).toPromise()
+    .then(res=>{ 
+      this.totalRow = 50;
       this.usersdata = res;
-    }catch(error){
-      console.debug(error)
-    }
+      this.loading = false;
+    }).catch(err=>{
+      this.msgService.add({
+        severity: 'Warning',
+        summary: 'Gagal',
+        detail: err.error.msg ? err.error.msg : err.error
+      });
+    })
+    .finally(()=>{
+      this.loading = false;
+    })
   }
 
   hideTable(){
@@ -59,7 +79,11 @@ export class ListComponent implements OnInit {
       this.isShowForm = true;
 
     }catch(error){
-      console.debug(error)
+      this.msgService.add({
+        severity: 'info',
+        summary: 'Gagal',
+        detail: 'Data Gagal dihapus' + error
+      });
     }
   }
 
