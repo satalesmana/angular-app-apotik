@@ -32,8 +32,12 @@ import { TableModule } from 'primeng/table';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ListObatComponent } from './page/obat/list/list.component';
-import { FormObatComponent } from './page/obat/form/form.component'
-
+import { FormObatComponent } from './page/obat/form/form.component';
+import { LoginComponent } from './page/auth/login/login.component';
+import { RegisterComponent } from './page/auth/register/register.component'
+import {CardModule} from 'primeng/card';
+import {PasswordModule} from 'primeng/password';
+import {DividerModule} from 'primeng/divider';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +50,9 @@ import { FormObatComponent } from './page/obat/form/form.component'
     FormComponent,
     ListComponent,
     ListObatComponent,
-    FormObatComponent
+    FormObatComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     HttpClientModule,
@@ -71,7 +77,10 @@ import { FormObatComponent } from './page/obat/form/form.component'
     RippleModule,
     TableModule,
     ConfirmDialogModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    CardModule,
+    PasswordModule,
+    DividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
