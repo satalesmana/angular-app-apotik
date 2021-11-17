@@ -38,6 +38,7 @@ import { RegisterComponent } from './page/auth/register/register.component'
 import {CardModule} from 'primeng/card';
 import {PasswordModule} from 'primeng/password';
 import {DividerModule} from 'primeng/divider';
+import { ActivateComponent } from './page/auth/activate/activate.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +53,8 @@ import {DividerModule} from 'primeng/divider';
     ListObatComponent,
     FormObatComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ActivateComponent
   ],
   imports: [
     HttpClientModule,
