@@ -12,9 +12,11 @@ export class AppComponent {
   displayFinder: boolean;
   title: string;
   userComponent: boolean;
-  userListComponent:boolean;
+  userListComponent: boolean;
   feedbackDialog: boolean;
   isShowUserlist: boolean;
+  isShowObatForm: boolean;
+  isShowObatList: boolean;
 
   dialog = {
     showDialog: false,
@@ -31,9 +33,11 @@ export class AppComponent {
     this.displayFinder = false;
     this.userComponent = false;
     this.feedbackDialog = false;
-    this.userListComponent= false;
+    this.userListComponent = false;
     this.title = 'ini title';
     this.isShowUserlist = false;
+    this.isShowObatForm = false;
+    this.isShowObatList = false;
 
   }
 
@@ -42,12 +46,20 @@ export class AppComponent {
     this.onSetDocItem()
   }
 
-  onCloseUsersList(){
+  onCloseUsersList() {
     this.isShowUserlist = false;
   }
 
-  onCloseUsers(){
+  onCloseUsers() {
     this.userComponent = false
+  }
+
+  onCloseObat() {
+    this.isShowObatForm = false;
+  }
+
+  onCloseObatList() {
+    this.isShowObatList = false;
   }
 
   cekIsHome() {
@@ -77,8 +89,27 @@ export class AppComponent {
           {
             label: 'List Data',
             icon: 'pi pi-fw pi-user-plus',
-            command: () =>{
+            command: () => {
               this.isShowUserlist = true;
+            }
+          }
+        ]
+      },
+      {
+        label: 'Obat',
+        items: [
+          {
+            label: 'New',
+            icon: 'pi pi-fw pi-user-plus',
+            command: () => {
+              this.isShowObatForm = true;
+            }
+          },
+          {
+            label: 'List Data',
+            icon: 'pi pi-fw pi-user-plus',
+            command: () => {
+              this.isShowObatList = true;
             }
           }
         ]

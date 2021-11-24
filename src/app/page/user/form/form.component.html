@@ -18,21 +18,23 @@
       <div class="field grid">
         <label class="col-12 mb-2 md:col-2 md:mb-0">Email</label>
         <div class="col-12 md:col-10">
-            <input type="text"class="inputfield w-full" pInputText formControlName="email">
+            <input type="text"class="inputfield w-full" pInputText formControlName="email" >
         </div>
       </div>
 
       <div class="field grid">
         <label class="col-12 mb-2 md:col-2 md:mb-0">Password</label>
         <div class="col-12 md:col-10">
-            <input type="text"class="inputfield w-full" pInputText formControlName="password">
+            <input type="text"class="inputfield w-full" pInputText formControlName="password" value="">
         </div>
       </div>
 
     </form>
   </div>
   <ng-template pTemplate="footer">
+
     <p-button (click)="onCancel()" label="Cancel" styleClass="p-button-text"></p-button>
-    <p-button (click)="onSubmit()" label="Submit" styleClass="p-button-text"></p-button>
+    <p-button *ngIf="user.name !== '' " (click)="onUpdate()" label="Update" styleClass="p-button-text"></p-button>
+    <p-button *ngIf="user.name === '' " (click)="onSubmit()" label="Submit" styleClass="p-button-text"></p-button>
   </ng-template>
 </p-dialog>

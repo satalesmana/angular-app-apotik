@@ -1,0 +1,29 @@
+<div class="content">
+    <p-card header="Login App" [style]="{width: '360px'}" styleClass="p-card-shadow">
+        <div>
+            <form  novalidate>
+                <div class="field grid">
+                    <label class="col-12 mb-3 md:col-3 md:mb-0">Email</label>
+                    <div class="col-12 md:col-9">
+                        <input type="text"class="inputfield w-full" pInputText formControlName="email">
+                    </div>
+                </div>
+
+                <div class="field grid">
+                    <label class="col-12 mb-2 md:col-3 md:mb-0">Password</label>
+                    <div class="col-12 md:col-9">
+                        <p-password  formControlName="password" [toggleMask]="true">
+                            <ng-template pTemplate="header">
+                                <h6>Pick a password</h6>
+                            </ng-template>
+                        </p-password>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <ng-template pTemplate="footer">
+            <p-button label="Login" icon="pi pi-check"></p-button>
+            <p-button label="Register" icon="pi pi-times" styleClass="p-button-secondary" [style]="{'margin-left': '.5em'}"></p-button>
+        </ng-template>
+    </p-card>
+</div>

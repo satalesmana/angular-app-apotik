@@ -28,8 +28,17 @@ import { TessatuComponent } from './latihan/tessatu/tessatu.component';
 import { TesduaComponent } from './latihan/tesdua/tesdua.component';
 import { FormComponent } from './page/user/form/form.component';
 import { ListComponent } from './page/user/list/list.component';
-import {TableModule} from 'primeng/table';
-
+import { TableModule } from 'primeng/table';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { ListObatComponent } from './page/obat/list/list.component';
+import { FormObatComponent } from './page/obat/form/form.component';
+import { LoginComponent } from './page/auth/login/login.component';
+import { RegisterComponent } from './page/auth/register/register.component'
+import {CardModule} from 'primeng/card';
+import {PasswordModule} from 'primeng/password';
+import {DividerModule} from 'primeng/divider';
+import { ActivateComponent } from './page/auth/activate/activate.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +49,12 @@ import {TableModule} from 'primeng/table';
     TessatuComponent,
     TesduaComponent,
     FormComponent,
-    ListComponent
+    ListComponent,
+    ListObatComponent,
+    FormObatComponent,
+    LoginComponent,
+    RegisterComponent,
+    ActivateComponent
   ],
   imports: [
     HttpClientModule,
@@ -63,7 +77,12 @@ import {TableModule} from 'primeng/table';
     InputNumberModule,
     PanelModule,
     RippleModule,
-    TableModule
+    TableModule,
+    ConfirmDialogModule,
+    ProgressSpinnerModule,
+    CardModule,
+    PasswordModule,
+    DividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
