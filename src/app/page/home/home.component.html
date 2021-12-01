@@ -1,0 +1,52 @@
+<div class="mainbg content-section implementation dock-demo" *ngIf="cekIsHome()">
+    <p-menubar [model]="menubarItems">
+        <ng-template pTemplate="start">
+            <i class="pi pi-apple"></i>
+        </ng-template>
+        <ng-template pTemplate="end">
+            <i class="pi pi-video"></i>
+            <i class="pi pi-wifi"></i>
+            <i class="pi pi-volume-up"></i>
+            <span>Fri 13:07</span>
+            <i class="pi pi-search"></i>
+            <i class="pi pi-bars"></i>
+        </ng-template>
+    </p-menubar>
+    <div class="dock-window dock-advanced">
+        <p-dock [model]="dockItems" position="bottom">
+            <ng-template pTemplate="item" let-item>
+                <img [src]="item.icon" [alt]="item.label" width="100%">
+            </ng-template>
+        </p-dock>
+
+        <p-dialog [(visible)]="dialog.showDialog" [maximizable]="true" [breakpoints]="{'960px': '50vw'}"
+            [style]="{width: dialog.width, height: dialog.height}" [draggable]="true" [resizable]="false">
+            <app-kalkulator *ngIf="dialog.component=='kalkulator'"></app-kalkulator>
+            <app-about *ngIf="dialog.component=='about'"></app-about>
+        </p-dialog>
+
+        <p-dialog [(visible)]="displayFinder" [maximizable]="true" [breakpoints]="{'960px': '50vw'}"
+            [style]="{width: '50vw', height: '18rem'}" [draggable]="true" [resizable]="false">
+            asdf
+        </p-dialog>
+
+        <app-form-users [sowForm]="userComponent" (closeForm)="onCloseUsers()">
+        </app-form-users>
+
+        <app-list-users [sowTable]="isShowUserlist" (closeTable)="onCloseUsersList()">
+        </app-list-users>
+
+        <app-form-obat [sowForm]="isShowObatForm" (closeForm)="onCloseObat()">
+        </app-form-obat>
+
+        <app-list-obat [sowTable]="isShowObatList" (closeTable)="onCloseObatList()">
+        </app-list-obat>
+
+        <p-dialog [(visible)]="feedbackDialog" [maximizable]="true" [breakpoints]="{'960px': '50vw'}"
+            [style]="{width: '30vw', height: '23rem'}" [draggable]="true" [resizable]="false">
+            <app-feedback></app-feedback>
+
+        </p-dialog>
+
+    </div>
+</div>
